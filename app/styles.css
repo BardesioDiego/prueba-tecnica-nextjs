@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -69,29 +71,72 @@ h2 {
     border: 1px solid #ddd;
 }
 
-.contacto form {
-    display: flex;
-    flex-direction: column;
+.contacto {
+    width: 100%;
+    max-width: 600px;
+    margin: 2em auto;
+    padding: 2em;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.contacto label {
-    margin: 0.5em 0 0.2em;
+.contacto h2 {
+    text-align: center;
+    margin-bottom: 1em;
 }
 
-.contacto input, .contacto textarea {
-    padding: 0.5em;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+.input-group {
+    position: relative;
+    margin: 20px 0;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #666;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    background: transparent;
+    border: 1.2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label,
+.input-group textarea:focus~label,
+.input-group textarea:valid~label {
+    top: 0;
+    font-size: 12px;
+    background: #fff;
+    padding: 0 5px;
 }
 
 .contacto button {
-    margin-top: 1em;
-    padding: 0.7em;
+    width: 100%;
+    padding: 10px;
+    border: none;
     background-color: #4CAF50;
     color: white;
-    border: none;
-    border-radius: 4px;
+    font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .contacto button:hover {
@@ -99,13 +144,14 @@ h2 {
 }
 
 .success {
-    color: green;
-    font-weight: bold;
-    margin: 1em 0;
+    color: #28a745;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .error {
-    color: red;
-    font-weight: bold;
-    margin: 1em 0;
+    color: #dc3545;
+    text-align: center;
+    margin-bottom: 20px;
 }
+

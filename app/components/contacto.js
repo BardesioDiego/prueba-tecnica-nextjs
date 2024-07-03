@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import "../styles.css";
 
 const Contacto = () => {
   const [nombre, setNombre] = useState("");
@@ -37,34 +38,41 @@ const Contacto = () => {
       {success && <p className="success">¡Mensaje enviado con éxito!</p>}
       <form onSubmit={handleSubmit}>
         {error && <p className="error">{error}</p>}
-        <label htmlFor="nombre">Nombre:</label>
-        <input
-          type="text"
-          id="nombre"
-          name="nombre"
-          value={nombre}
-          onChange={(e) => setNombre(e.target.value)}
-          required
-        />
-
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-
-        <label htmlFor="mensaje">Mensaje:</label>
-        <textarea
-          id="mensaje"
-          name="mensaje"
-          value={mensaje}
-          onChange={(e) => setMensaje(e.target.value)}
-          required
-        ></textarea>
+        
+        <div className="input-group">
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            value={nombre}
+            onChange={(e) => setNombre(e.target.value)}
+            required
+          />
+          <label htmlFor="nombre">Nombre:</label>
+        </div>
+        
+        <div className="input-group">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <label htmlFor="email">Email:</label>
+        </div>
+        
+        <div className="input-group">
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            value={mensaje}
+            onChange={(e) => setMensaje(e.target.value)}
+            required
+          ></textarea>
+          <label htmlFor="mensaje">Mensaje:</label>
+        </div>
 
         <button type="submit">Enviar</button>
       </form>
@@ -73,3 +81,4 @@ const Contacto = () => {
 };
 
 export default Contacto;
+
